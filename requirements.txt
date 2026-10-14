@@ -1,0 +1,12 @@
+anthropic
+chromadb
+rank-bm25
+python-dotenv
+requests
+pypdf
+fastapi
+uvicorn
+streamlit
+# optional rerankers:
+# sentence-transformers
+# cohere
