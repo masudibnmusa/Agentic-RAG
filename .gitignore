@@ -1,0 +1,5 @@
+.env
+data/vector_db/*
+data/traces/*
+data/eval_results/*
+!data/**/.gitkeep
