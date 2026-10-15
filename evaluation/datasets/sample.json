@@ -1,0 +1,77 @@
+{
+  "_note": "Template. Replace with questions about YOUR corpus. types: single_hop | multi_hop | unanswerable | followup",
+  "examples": [
+    {
+      "id": "sh-1",
+      "type": "single_hop",
+      "question": "How many days do customers have to request a refund?",
+      "reference_answer": "30 days from the purchase date.",
+      "relevant_sources": ["refund_policy.md"],
+      "answerable": true
+    },
+    {
+      "id": "sh-2",
+      "type": "single_hop",
+      "question": "What is the API rate limit on the Pro plan?",
+      "reference_answer": "1,000 requests per minute.",
+      "relevant_sources": ["api_limits.md"],
+      "answerable": true
+    },
+    {
+      "id": "mh-1",
+      "type": "multi_hop",
+      "question": "Compare the API rate limits of the Pro and Team plans.",
+      "reference_answer": "Pro allows 1,000 requests per minute; Team allows 5,000 requests per minute.",
+      "relevant_sources": ["api_limits.md"],
+      "answerable": true
+    },
+    {
+      "id": "mh-2",
+      "type": "multi_hop",
+      "question": "If I cancel the annual plan after 20 days, am I eligible for a refund, and what does the annual plan cost?",
+      "reference_answer": "Yes, within the 30-day window; the annual plan costs $240 per year.",
+      "relevant_sources": ["refund_policy.md", "pricing.md"],
+      "answerable": true
+    },
+    {
+      "id": "un-1",
+      "type": "unanswerable",
+      "question": "Does the product have an official Rust SDK?",
+      "reference_answer": null,
+      "relevant_sources": [],
+      "answerable": false
+    },
+    {
+      "id": "un-2",
+      "type": "unanswerable",
+      "question": "Who is the CEO of the company?",
+      "reference_answer": null,
+      "relevant_sources": [],
+      "answerable": false
+    },
+    {
+      "id": "fu-1",
+      "type": "followup",
+      "history": [
+        {"role": "user", "content": "What is the API rate limit on the Pro plan?"},
+        {"role": "assistant", "content": "The Pro plan allows 1,000 requests per minute."}
+      ],
+      "question": "And for the Team plan?",
+      "reference_answer": "5,000 requests per minute.",
+      "relevant_sources": ["api_limits.md"],
+      "answerable": true
+    },
+    {
+      "id": "fu-2",
+      "type": "followup",
+      "history": [
+        {"role": "user", "content": "How many days do I have to request a refund?"},
+        {"role": "assistant", "content": "You have 30 days from the purchase date."}
+      ],
+      "question": "Does that apply to monthly plans too?",
+      "reference_answer": "Yes, the 30-day refund window applies to monthly plans as well.",
+      "relevant_sources": ["refund_policy.md"],
+      "answerable": true
+    }
+  ]
+}
